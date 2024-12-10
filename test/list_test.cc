@@ -68,6 +68,7 @@ TEST(list_test, StaticList_insertion_tail) {
 }
 
 TEST(list_test, StaticList_deletion) {
+
     const int size  =10;
 
     vector<int> a(size);
@@ -108,7 +109,8 @@ TEST(list_test, StaticList_deletion) {
         EXPECT_EQ(a[i],b[i]);
     }   
 }
-TEST(list_test,DynamicList_insertion){
+
+TEST(list_test,DynamicList){
    const int size  =10;
     DynamicList L;
     EXPECT_TRUE(L.Init());
@@ -129,4 +131,29 @@ TEST(list_test,DynamicList_insertion){
         EXPECT_EQ(a[l],a[r]);
          l++,r--;
     }
+}
+
+TEST(list_test, StaticDoubleList){
+    const int size = 10;
+    StaticDLinklist L;
+    L.init();
+    for(int i = 0;  i<size; i++){
+        if(i%2 == 0) L.add_right(0,i+1); 
+        else  L.add_left(1,i+1); 
+        //L.print();
+    }
+    int a [size],b[size],cnt = 0;
+    for(int i = L.r[0], j = L.l[1] ;  (i != 1) && (j!= 0);i = L.r[i],j = L.l[j]){
+        a[cnt] = L.e[i];
+        b[size - 1- cnt] = L.e[j];
+        cnt++;
+        //printf("%d %d\n",L.e[i],L.e[j]);
+    }
+    /*
+    for(int i = 0; i< size; i++){
+        printf("%d %d\n",a[i],b[i]);
+    }
+    EXPECT_EQ(0,1);
+    */
+    EXPECT_TRUE(std::equal(a, a+size, b));
 }

@@ -10,7 +10,7 @@ using std::cout;
 using std::cin;
 using std::endl;
 
-//静态单链表 带头结点head和非法数组下标-1做尾指针
+//静态非循环单链表 带头结点head和非法数组下标-1做尾指针
 typedef struct StaticLinklist{
     //head :idx of first node（head node‘s next)
     //e[i] :Data of ith node
@@ -64,7 +64,7 @@ typedef struct StaticLinklist{
 
 }StaticLinklist;
 
-//静态双链表，不带头、尾结点，数组下标做头指针
+//静态非循环双链表，带头、尾结点，头指针0，尾指针1；
 typedef struct StaticDLinklist{
     //head :idx of first node（head node‘s next)
     //e[i] :Data of ith node
@@ -78,8 +78,44 @@ typedef struct StaticDLinklist{
         idx = 2;
     }
 
-    void add_to_head(int x){
+    int  size(){
+        if(r[0] == 1) return 0;
+        int p=r[0],cnt = 1;
+        while (p != 1) {
+            cnt ++;
+            p = r[p];
+        }
+        return cnt ;
+    }
 
+    void print(){
+        int p = r[0];
+        while(p != 1) {
+            cout<< e[p]<<' ';
+            p = r[p];
+        }
+        cout << endl;
+    }
+
+    //在第k个结点右侧插入x
+    //调用之前检查k是否为尾结点，避免非法操作
+    void add_right(int k , int x){
+        e[idx] = x;
+        r[idx]  = r[k];
+        l[idx] = k;
+        //下面两行不可交换顺序，否则出错
+        l[r[k]] = idx;//先修改r[k]结点(即k结点的左指针）
+        r[k] = idx;//再修改k结点的右指针
+        idx++;
+    }
+
+    void add_left(int k, int x){
+        add_right(l[k],x);
+    }
+
+    void remove(int k){
+        r[l[k]] = r[k];
+        l[r[k]] = l[k];
     }
 }StaticDLinklist;
 
