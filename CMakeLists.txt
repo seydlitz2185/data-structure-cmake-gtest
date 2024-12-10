@@ -3,7 +3,7 @@ project(CMake-Demo)
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-
+include_directories(${GTEST_INCLUDE_DIRS})
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -18,13 +18,15 @@ add_executable(
     main.cpp
     graph/graph.h
     graph/graph_algorithm.h
-    sort/sort.h 
+    sort/sort.h
+    list/list.h
     )
 
 add_executable(
     hello_test
     test/hello_test.cc
     test/sort_test.cc
+    test/list_test.cc
 )
 target_link_libraries(
   hello_test

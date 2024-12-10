@@ -5,8 +5,6 @@
  */
 using std::cout;
 using std::endl;
-int main(void){
-    testing::InitGoogleTest(&argc, (char**)argv);
-    return RUN_ALL_TESTS();
+int main(int argc, char ** argv){
     return 0;
 }
