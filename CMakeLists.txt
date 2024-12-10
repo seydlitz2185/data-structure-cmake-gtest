@@ -20,6 +20,8 @@ add_executable(
     graph/graph_algorithm.h
     sort/sort.h
     list/list.h
+    list/stack.h
+    list/queue.h
     )
 
 add_executable(
@@ -27,6 +29,8 @@ add_executable(
     test/hello_test.cc
     test/sort_test.cc
     test/list_test.cc
+    test/stack_test.cc
+    test/queue_test.cc
 )
 target_link_libraries(
   hello_test
