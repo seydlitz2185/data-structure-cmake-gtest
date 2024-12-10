@@ -1,7 +1,5 @@
 #include <iostream>
-/*
-@author: Steven Yu 2024/12/10
- */
+
 #ifndef Elemtype
 #define Elemtype int
 #endif

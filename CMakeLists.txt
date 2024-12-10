@@ -22,6 +22,7 @@ add_executable(
     list/list.h
     list/stack.h
     list/queue.h
+    string/KMP.h
     )
 
 add_executable(
@@ -31,6 +32,7 @@ add_executable(
     test/list_test.cc
     test/stack_test.cc
     test/queue_test.cc
+    test/kmp_test.cc
 )
 target_link_libraries(
   hello_test
