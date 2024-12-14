@@ -16,3 +16,31 @@ TEST(kmp_test, simple_kmp) {
     int match = k.match();
     EXPECT_EQ(match,6);
 }
+
+TEST(kmp_test, nextVal) {
+    char s[10] ={'a','a','a','b','a','a','a','a','a','b'};
+    int n = 10;
+    char p[5] = {'a','a','a','a','b'};
+    int m = 5;
+    KMP k;
+    k.Init(s,p,n,m);
+    k.get_nextVal();
+    int match = k.match_nextVal();
+    EXPECT_EQ(match,6);
+}
+
+TEST(kmp_test, sentence) {
+    string sentence = "The quick brown fox jumps over a lazy dog";
+    int n = sentence.size();
+    char s[10010];
+    strcpy(s,sentence.c_str());
+    string word = "jump";
+    int m = word.size();
+    char p[10010] ;
+    strcpy(p,word.c_str());
+    KMP k;
+    k.Init(s,p,n,m);
+    k.get_nextVal();
+    int match = k.match_nextVal();
+    EXPECT_EQ(match,21);
+}
