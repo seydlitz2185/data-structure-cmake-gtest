@@ -82,6 +82,10 @@ TEST(sort_test, MergeSort)
 {
     test_sort(MergeSort, "MergeSort");
 }
+TEST(sort_test, HeapSort)
+{
+    test_sort(HeapSort, "HeapSort");
+}
 int main(int argc, char **argv)
 {
     ::testing::InitGoogleTest(&argc, argv);

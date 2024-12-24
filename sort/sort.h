@@ -1,7 +1,7 @@
 #include <iostream>
 #include <math.h>
 #define ElementType int
-using std::cout;
+using namespace std;
 /// @brief
 /// @param a
 /// @return
@@ -24,6 +24,24 @@ void swap(int &a, int &b)
     b = temp;
 }
 
+
+void swim(int a[],int k){
+    while((k+1)/2-1 && a[k] < a[(k+1)/2-1]){
+        swap(a[k],a[(k+1)/2-1]);
+        k = (k+1)/2-1;
+    }
+}
+
+void sink(int a[],int N,int k){
+    int t = k;
+    if(((k+1)*2-1)<N && a[(k+1)*2 -1]< a[t]) t = (k+1)*2-1;
+    if(((k+1)*2)<N && a[(k+1)*2 ]< a[t]) t = (k+1)*2;
+    if(k !=t){
+        cout<<"swap"<<k<<" "<<a[k]<<" "<<t<<" "<<a[t]<<endl;
+        swap(a[k],a[t]);
+        sink(a,N,t);
+    }
+}
 // 所有排序在进行前后都打印一遍数组，用于人工检验排序结果
 // 冒泡排序
 void BubbleSort(int a[], int N)
@@ -209,6 +227,20 @@ void SelectSort(int a[], int N)
 void HeapSort(int a[], int N)
 {
     print_array(a, N);
+    int b[N];
+    for(int i =0 ;i<N;i++){
+        b[i] = a[i];
+    }
+    for(int i = N/2; i>=0;i--) {
+        sink(b,N,i);
+    }
+    //print_array(b, N);
+    for(int i=0;i<N;i++){
+        a[i] = b[0];
+        b[0] = b[N-i-1];
+        sink(b,N-i-1,0);
+        //print_array(b, N-i-1);
+    }
     print_array(a, N);
 }
 

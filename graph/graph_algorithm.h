@@ -1,5 +1,5 @@
 #include "graph.h"
-#include "../list/My_Priority_Queue.h"
+#include "../list/My_Priority_Queue_Sample.h"
 #include <limits>
 
 using std::to_string;

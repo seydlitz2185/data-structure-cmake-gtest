@@ -180,7 +180,8 @@ typedef struct priorty_queue{
     }
     void push(int x){
         size ++;
-        ph[++m] = size,hp[size] = m;
+        m++;
+        ph[m] = size,hp[size] = m;
         h[size]  =x;
         up(size);
     }
