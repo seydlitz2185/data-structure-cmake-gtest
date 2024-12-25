@@ -17,7 +17,7 @@ TEST(queue_test, Simple_Queue)
     {
         q.enqueue(i + 1);
     }
-    for (int i = i; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         EXPECT_EQ(q.front(), i+1);
         q.dequeue();
@@ -36,7 +36,7 @@ TEST(queue_test, CircularQueue)
         q.enqueue(i + 1);
     }
     EXPECT_TRUE((q.isFull()) == (size==maxSize-1));
-    for (int i = i; i < size; i++)
+    for (int i = 0; i < size; i++)
     {
         EXPECT_EQ(q.front(), i+1);
         q.dequeue();

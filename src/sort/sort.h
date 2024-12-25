@@ -227,7 +227,7 @@ void SelectSort(int a[], int N)
 void HeapSort(int a[], int N)
 {
     print_array(a, N);
-    int b[N];
+    int* b = (int *)malloc(sizeof(int)*N);
     for(int i =0 ;i<N;i++){
         b[i] = a[i];
     }
@@ -279,7 +279,7 @@ void MergeSortHelper(int a[], int tmp[], int l, int r)
 void MergeSort(int a[], int N)
 {
     print_array(a, N);
-    int tmp[N]; // Temporary array to store merged result
+    int * tmp = (int*)malloc(sizeof(int)*N); // Temporary array to store merged result
     MergeSortHelper(a, tmp, 0, N - 1);
     print_array(a, N);
 }

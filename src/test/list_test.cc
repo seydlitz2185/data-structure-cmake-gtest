@@ -144,8 +144,9 @@ TEST(list_test, DynamicList)
         L.ListInsertFore(1, i + 1);
     }
     // 检查是否是回文串
-    int a[L.Length()];
-    L.ToList(a);
+    vector<int> a(L.Length());
+    int* b = &a[0];
+    L.ToList(b);
     int l = 0, r = L.Length() - 1;
     while (l < r)
     {
@@ -167,7 +168,9 @@ TEST(list_test, StaticDoubleList)
             L.add_left(1, i + 1);
         // L.print();
     }
-    int a[size], b[size], cnt = 0;
+    vector<int> a(size);
+    vector<int> b(size);
+    int cnt = 0;
     for (int i = L.r[0], j = L.l[1]; (i != 1) && (j != 0); i = L.r[i], j = L.l[j])
     {
         a[cnt] = L.e[i];
@@ -181,5 +184,6 @@ TEST(list_test, StaticDoubleList)
     }
     EXPECT_EQ(0,1);
     */
-    EXPECT_TRUE(std::equal(a, a + size, b));
+   int*c = &b[0];
+    EXPECT_TRUE(std::equal(a.begin(),a.end(), c));
 }
