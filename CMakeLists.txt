@@ -1,4 +1,4 @@
-project(CMake-Demo)
+project(data_structure_with_gtest)
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -14,8 +14,8 @@ set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
 enable_testing()
 add_executable( 
-  gtest
-  main.cpp
+  data_structure
+  src/main.cpp
   src/graph/graph.h
   src/graph/graph_algorithm.h
   src/sort/sort.h
@@ -27,8 +27,7 @@ add_executable(
   )
 
 add_executable(
-    hello_test
-    
+    data_structure_test
     src/test/hello_test.cc
     src/test/sort_test.cc
     src/test/list_test.cc
@@ -38,9 +37,9 @@ add_executable(
     src/test/disjoint_set_test.cc
 )
 target_link_libraries(
-  hello_test
+  data_structure_test
   GTest::gtest_main
 )
 
 include(GoogleTest)
-gtest_discover_tests(hello_test)
+gtest_discover_tests(data_structure_test)
