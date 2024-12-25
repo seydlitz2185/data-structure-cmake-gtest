@@ -10,7 +10,7 @@ using std::vector;
 
 TEST(queue_test, Simple_Queue)
 {
-    const int size = 10;
+    int size = 10;
     SeqQueue q;
     EXPECT_TRUE(q.isEmpty());
     for (int i = 0; i < size; i++)

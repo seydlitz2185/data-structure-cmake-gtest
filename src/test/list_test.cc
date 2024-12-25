@@ -9,7 +9,7 @@ using std::cout;
 using std::vector;
 TEST(list_test, StaticList_insertion_head)
 {
-    const int size = 10;
+    int size = 10;
     vector<int> a(size);
     a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     vector<int> b(size);
@@ -43,7 +43,7 @@ TEST(list_test, StaticList_insertion_head)
 
 TEST(list_test, StaticList_insertion_tail)
 {
-    const int size = 10;
+    int size = 10;
 
     vector<int> a(size);
     a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -80,7 +80,7 @@ TEST(list_test, StaticList_insertion_tail)
 TEST(list_test, StaticList_deletion)
 {
 
-    const int size = 10;
+    int size = 10;
 
     vector<int> a(size);
     a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
@@ -129,7 +129,7 @@ TEST(list_test, StaticList_deletion)
 
 TEST(list_test, DynamicList)
 {
-    const int size = 10;
+    int size = 10;
     DynamicList L;
     EXPECT_TRUE(L.Init());
     // 尾插入
@@ -156,7 +156,7 @@ TEST(list_test, DynamicList)
 
 TEST(list_test, StaticDoubleList)
 {
-    const int size = 10;
+    int size = 10;
     StaticDLinklist L;
     L.init();
     for (int i = 0; i < size; i++)

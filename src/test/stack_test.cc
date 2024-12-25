@@ -10,7 +10,7 @@ using std::vector;
 
 TEST(stack_test, Simple_Stack)
 {
-    const int size = 10;
+    int size = 10;
     SeqStack s;
     EXPECT_TRUE(s.isEmpty());
     for (int i = 0; i < size; i++)

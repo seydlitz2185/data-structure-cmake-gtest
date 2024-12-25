@@ -5,7 +5,6 @@
 #include <vector>
 #include <functional>
 // 使用chatGPT改进了测试函数
-
 // 共享随机数序列
 std::vector<int> shared_random_numbers;
 
@@ -28,19 +27,19 @@ using SortFunction = std::function<void(int *, int)>;
 void test_sort(SortFunction sort_function, const std::string &algorithm_name)
 {
     const int size = shared_random_numbers.size();
-    int a[size], b[size];
-
+    vector<int>a(size);//vector支持用变量初始化数组
+    vector<int>b(size);
+//clang 支持c风格数组用变量初始化，即VLA；但MSVC不支持VLA
     for (int i = 0; i < size; ++i)
     {
         a[i] = shared_random_numbers[i];
         b[i] = shared_random_numbers[i];
     }
-    // c风格数组遍历方式
-    std::sort(a, a + size); // 使用标准库排序
-    // 若遍历vector容器，使用a.begin(), a.end()
-    sort_function(b, size); // 调用传入的排序算法
+    std::sort(a.begin(), a.end()); // 使用标准库排序
+    int *c = &b[0];//利用vector数组也在内存中连续存放的特性，将vector转换为c风格数组
+    sort_function(c, size); // 调用传入的排序算法
 
-    EXPECT_TRUE(std::equal(a, a + size, b))
+    EXPECT_TRUE(std::equal(a.begin(), a.end(), c))
         << "Failed: " << algorithm_name;
 }
 
