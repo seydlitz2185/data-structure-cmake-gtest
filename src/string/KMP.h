@@ -47,12 +47,12 @@ class KMP{
             print_s();
             print_p();
         }
-        //求next数组，此算法很巧妙，和笔算next数组在思路上并不一样
+        //求next数组，此算法很巧妙
         void get_next( ){
             for(int i = 2,j=0;i<= this->m; i++){
-                while (j && p[i] != p[j+1]) j = ne[j];
+                while (j && p[i] != p[j+1]) j = ne[j]; //MSVC下有bug，怀疑数组没有正确初始化导致的
                 if(p[i] == p[j+1]) j ++ ;
-                    ne[i] = j;
+                ne[i] = j;
                 }
             print_ne();
         }
