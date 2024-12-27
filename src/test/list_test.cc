@@ -100,7 +100,6 @@ TEST(list_test, StaticList_deletion)
     for (int i = 0; i < size / 2; i++)
     {
         a.pop_back();
-        b.pop_back();
         // 这个删除的实现不太好
         L.remove(size - 2 - i);
     }
