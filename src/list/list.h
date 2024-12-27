@@ -5,7 +5,7 @@
 #ifndef Elemtype
 #define Elemtype int
 #endif
-const int N = 100010;
+const int N = 10010;
 using std::cin;
 using std::cout;
 using std::endl;
@@ -86,6 +86,9 @@ typedef struct StaticDLinklist
 
     void init()
     {
+        memset(e,0,N);
+        memset(l,0,N);
+        memset(r,0,N);
         r[0] = 1, l[1] = 0;
         idx = 2;
     }

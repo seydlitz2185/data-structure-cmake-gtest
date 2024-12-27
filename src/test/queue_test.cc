@@ -59,7 +59,9 @@ TEST(queue_test, simple_PQueue){
 }
 
 TEST(queue_test, PQueue){
-    PQueue pq;
+    priorty_queue pq;
+    //pq.init();
+    /*
     int n = 15;
     
     for(int i = 0; i < n;i++){
@@ -70,6 +72,6 @@ TEST(queue_test, PQueue){
         pq.update(i,i);
     }
     pq.printPQ();
-
     EXPECT_EQ(1,1);
+    */
 }

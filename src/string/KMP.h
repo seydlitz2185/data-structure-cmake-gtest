@@ -42,18 +42,23 @@ class KMP{
         void Init(char s[],char p [], int n ,int m){
             this->n = n;
             this->m = m;
-            memcpy(this->s+1,s,n);
-            memcpy(this->p+1,p,m);
+            memset(this->s,0,this->n+1);
+            memset(this->p,0,this->m+1);
+            memset(this->ne,0,sizeof(int)*this->m+1);
+            memset(this->nextVal,0,sizeof(int)*this->m+1);
+    
+            memcpy(this->s+1,s,this->n);
+            memcpy(this->p+1,p,this->m);
             print_s();
             print_p();
         }
-        //求next数组，此算法很巧妙，和笔算next数组在思路上并不一样
-        void get_next( ){
-            for(int i = 2,j=0;i<= this->m; i++){
-                while (j && p[i] != p[j+1]) j = ne[j];
+        //求next数组，此算法很巧妙
+        void get_next(){
+            for(int i = 2,j = 0;i <= this->m; i++){
+                while (j>0 && p[i] != p[j+1]) j = ne[j];
                 if(p[i] == p[j+1]) j ++ ;
-                    ne[i] = j;
-                }
+                ne[i] = j;
+            }
             print_ne();
         }
 

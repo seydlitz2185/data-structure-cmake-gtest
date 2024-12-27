@@ -31,11 +31,11 @@ TEST(kmp_test, nextVal) {
 
 TEST(kmp_test, sentence) {
     string sentence = "The quick brown fox jumps over a lazy dog";
-    int n = sentence.size();
+    int n = (int)sentence.size();
     char s[10010];
     strcpy(s,sentence.c_str());
     string word = "jump";
-    int m = word.size();
+    int m = (int)word.size();
     char p[10010] ;
     strcpy(p,word.c_str());
     KMP k;

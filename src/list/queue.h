@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <math.h>
 /*
 @author: Steven Yu 2024/12/10
@@ -6,7 +6,7 @@
 #ifndef Elemtype
 #define Elemtype int
 #endif
-const int N = 100010;
+const int N = 10010;
 const int maxSize = 100;
 using std::cin;
 using std::cout;
@@ -82,7 +82,11 @@ typedef struct CircularQueue{
 
 //简单小根堆，只支持插入元素和删除堆顶元素
 typedef struct simple_priority_queue{
-    int h[N],size;//h[0]空置，元素从h[1]开始存放
+    int h[N],size=0;//h[0]空置，元素从h[1]开始存放
+
+    void init(){
+        memset(h,0,N);
+    }
     //层序打印二叉堆
     void printPQ(){
         printf("%d\n",h[1]);
@@ -136,8 +140,13 @@ typedef struct priorty_queue{
     //ph[k]存放第k个插入的元素在h中的下标；（下标映射到堆）
     //hp[j]存放堆中的第j个元素是第几次插入的（堆映射到下标）
     //m记录第m次插入操作；
-    int h[N],ph[N],hp[N],m,size;
+    int h[N],ph[N],hp[N],m=0,size=0;
 
+    void init(){
+        memset(h,0,N);
+        memset(ph,0,N);
+        memset(hp,0,N);
+    }
     void printPQ(){
         printf("%d\n",h[1]);
         for(int i = 0; (2<<(i)) < size;i++){

@@ -155,8 +155,7 @@ TEST(list_test, DynamicList)
     }
 }
 
-TEST(list_test, StaticDoubleList)
-{
+TEST(list_test, StaticDLinklist){
     int size = 10;
     StaticDLinklist L;
     L.init();
@@ -184,6 +183,6 @@ TEST(list_test, StaticDoubleList)
     }
     EXPECT_EQ(0,1);
     */
-   int*c = &b[0];
+    int*c = &b[0];
     EXPECT_TRUE(std::equal(a.begin(),a.end(), c));
 }
