@@ -6,7 +6,7 @@
 #ifndef Elemtype
 #define Elemtype int
 #endif
-const int N = 10010;
+const int N = 10010;//MSCV下N太大会导致queue内存不足，工程中应使用vector
 const int maxSize = 100;
 using std::cin;
 using std::cout;
