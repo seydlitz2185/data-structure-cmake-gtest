@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../string/KMP.h"
+#include <pattern_matching/KMP.h>
 #include <string.h>
 // Demonstrate some basic assertions.
 TEST(kmp_test, simple_kmp) {

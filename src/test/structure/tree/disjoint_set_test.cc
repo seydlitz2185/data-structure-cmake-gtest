@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../list/disjoint_set.h"
+#include <tree/disjoint_set.h>
 // Demonstrate some basic assertions.
 TEST(disjoint_set_Test, disjoint_set) {
     disjoint_set d;

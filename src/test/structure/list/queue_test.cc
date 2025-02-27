@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../list/queue.h"
+#include <list/queue.h>
 #include <random>
 #include <vector>
 #include <functional>

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../list/stack.h"
+#include <list/stack.h>
 #include <random>
 #include <vector>
 #include <functional>

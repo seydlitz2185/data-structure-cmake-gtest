@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 
 // Demonstrate some basic assertions.
-TEST(Graph_Test, ) {
+TEST(Graph_Test,dummy ) {
   // Expect two strings not to be equal.
   EXPECT_STRNE("hello", "world");
   // Expect equality.

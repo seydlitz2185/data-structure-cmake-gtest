@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../sort/sort.h"
+#include <sort/sort.h>
 #include <algorithm>
 #include <random>
 #include <vector>
