@@ -2,7 +2,7 @@
 add_library(
     algorithm INTERFACE
 
-    pattern_matching/kmp.h
+    pattern_matching/KMP.h
     sort/sort.h
 
 )
