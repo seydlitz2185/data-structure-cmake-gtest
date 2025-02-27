@@ -1,7 +1,7 @@
 project(data_structure_with_gtest)
 
-set(CMAKE_C_COMPILER "C:/msys64/usr/bin/clang.exe")
-set(CMAKE_CXX_COMPILER "C:/msys64/usr/bin/clang++.exe")
+#set(CMAKE_C_COMPILER "C:/msys64/usr/bin/clang.exe")
+#set(CMAKE_CXX_COMPILER "C:/msys64/usr/bin/clang++.exe")
 
 # GoogleTest requires at least C++14
 set(CMAKE_CXX_STANDARD 14)
@@ -30,6 +30,7 @@ add_executable(
   src/list/queue.h
   src/list/disjoint_set.h
   src/string/KMP.h
+  src/composite/enum.h
   )
 
 add_executable(
@@ -41,6 +42,7 @@ add_executable(
     src/test/queue_test.cc
     src/test/kmp_test.cc
     src/test/disjoint_set_test.cc
+    src/test/composite_test.cc
 )
 target_link_libraries(
   data_structure_test
