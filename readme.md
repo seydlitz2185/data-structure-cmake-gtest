@@ -2,7 +2,8 @@
 
 ## 项目结构
 
-2025年2月27日10:35
+2025年3月07日21:55
+
 ```
 └── src
     ├── STL
@@ -12,7 +13,6 @@
             └── KMP.h
         └── sort
             └── sort.h
-    ├── main.cpp
     ├── structure
         ├── CMakeLists.txt
         ├── composite
@@ -31,12 +31,12 @@
             └── disjoint_set.h
     └── test
         ├── CMakeLists.txt
-        ├── algorithm
+        ├── hello_test.cc
+	├── algorithm
             ├── pattern_matching
                 └── kmp_test.cc
             └── sort
                 └── sort_test.cc
-        ├── hello_test.cc
         └── structure
             ├── composite
                 └── composite_test.cc
@@ -49,6 +49,7 @@
             └── tree
                 └── disjoint_set_test.cc
 ```
+
 ## 使用方法
 
 - 下载代码前需要做到：
@@ -58,7 +59,8 @@
     - 验证方式： cmake --version可以正常运行。
 - 下载代码后编译程序;在项目根目录下执行
 
-  - ``mkdir build && cd build; cmake ..; make``
+  - 使用默认编译器进行编译： ``mkdir build && cd build; cmake ..; cmake --build .``
+  - 手动指定编译器进行编译： ``mkdir build && cd build; cmake -G "MinGW Makefiles" -DUSE_CLANG=ON ..; cmake --build .``
 - 运行gtest；此时在子目录build下
 
   - `ctest`

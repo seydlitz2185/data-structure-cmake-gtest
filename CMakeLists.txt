@@ -5,6 +5,7 @@ option(USE_CLANG "Build with clang" OFF)
 option(USE_GCC "Build with gcc" OFF)
 
 # 设置MSYS2环境下的编译器路径
+# 请根据实际安装路径修改
 set(MSYS2_GCC_PATH "C:/msys64/mingw64/bin" CACHE PATH "MSYS2 MinGW-w64 GCC installation directory")
 set(MSYS2_CLANG_PATH "C:/msys64/clang64/bin" CACHE PATH "MSYS2 Clang64 installation directory")
 
